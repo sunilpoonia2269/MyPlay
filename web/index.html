@@ -1,0 +1,523 @@
+<%
+                                            ResultSet rs1 = st.executeQuery("select * from uploaded_videos");
+
+                                            while (rs1.next()) {
+
+                                                ResultSet getChannel1 = st1.executeQuery("select * from channel where chcode='" + rs1.getString("chcode") + "'");
+
+                                                if (getChannel1.next()) {
+
+
+                                        %>  
+
+
+                                        <div class="col-md-3 resent-grid recommended-grid slider-first">
+                                            <div class="random-class">
+                                                <div class="resent-grid-img recommended-grid-img">
+                                                    <a href="single.jsp?vcode=<%=rs1.getString("vcode")%>">
+                                                        <!--                                                    <video width="100%" controls>
+                                                                                                                <source src="uploadVideo/<%=rs1.getString("vcode")%>.mp4" type="video/mp4">
+                                                                                                                <source src="movie.ogg" type="video/ogg">
+                                                                                                                Your browser does not support the video tag.
+                                                                                                            </video>-->
+                                                        <img class="image-class" src="thumbnail/<%=rs1.getString("vcode")%>.jpg" alt="" />
+                                                    </a>
+                                                    <div class="time small-time slider-time">
+                                                        <p>7:34</p>
+                                                    </div>
+                                                    <div class="clck small-clck">
+                                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="resent-grid-info recommended-grid-info">
+                                                    <div class="video-title-image">
+                                                        <div>
+                                                            <img src="upload/<%=getChannel1.getString("usercode")%>.jpg" alt="channel-img" class="channel-img">
+                                                        </div>
+
+
+
+                                                        <div>
+                                                            <h5><a href="single.jsp?vcode=<%=rs1.getString("vcode")%>" class="title"><%=rs1.getString("title")%></a></h5>
+                                                            <div class="slid-bottom-grids">
+                                                                <div class="slid-bottom-grid">
+                                                                    <a href="#" class="author"><%=getChannel1.getString("name")%> <span class="material-icons check-icon">
+                                                                            check_circle
+                                                                        </span></a>
+                                                                </div>
+                                                                <div class="slid-bottom-grid slid-bottom-right">
+                                                                    <p class="views views-info"><%=rs1.getInt("views")%> views | </p><p class="views views-info"><%=rs1.getString("date")%></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="clearfix"> </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <%
+                                                }
+                                            }
+                                        %>
+
+
+<!--                <div class="recommended">
+                    <div class="recommended-grids">
+                        <div class="recommended-info">
+                            <h3>Sports</h3>
+                        </div>
+
+
+                        <%
+                            ResultSet rs4 = st.executeQuery("select * from uploaded_videos where category='Sports'");
+
+                            while (rs4.next()) {
+                                String newChcode = rs4.getString("chcode");
+
+                                ResultSet getChannel2 = st1.executeQuery("select name from channel where chcode='" + newChcode + "'");
+
+                                if (getChannel2.next()) {
+
+
+                        %>  
+
+
+
+                        <div class="col-md-3 resent-grid recommended-grid">
+                            <div class="random-class">
+                                <div class="resent-grid-img recommended-grid-img">
+                                    <a href="single.jsp?vcode=<%=rs4.getString("vcode")%>">
+                                                                            <video width="100%" controls>
+                                                                                <source src="uploadVideo/<%=rs4.getString("vcode")%>.mp4" type="video/mp4">
+                                                                                <source src="movie.ogg" type="video/ogg">
+                                                                                Your browser does not support the video tag.
+                                                                            </video>
+                                        <img class="image-class" src="thumbnail/<%=rs4.getString("vcode")%>.jpg" alt="" />
+                                    </a>
+                                    <div class="time small-time slider-time">
+                                        <p>7:34</p>
+                                    </div>
+                                    <div class="clck small-clck">
+                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                    <h5><a href="single.jsp?vcode=<%=rs4.getString("vcode")%>" class="title"><%=rs4.getString("title")%></a></h5>
+                                    <ul>
+                                        <li><p class="author author-info"><a href="#" class="author"><%=getChannel2.getString("name")%></a></p></li>
+                                        <li class="right-list"><p class="views views-info"><%=rs4.getInt("views")%> views</p></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <%
+
+                                }
+                            }
+
+                        %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="clearfix"> </div>
+                    </div>
+
+                </div>-->
+
+
+
+                        <%                             ResultSet rs5 = st.executeQuery("select * from uploaded_videos where category='Education'");
+
+                            while (rs5.next()) {
+                                String newChcode = rs5.getString("chcode");
+
+                                ResultSet getChannel3 = st1.executeQuery("select name from channel where chcode='" + newChcode + "'");
+
+                                if (getChannel3.next()) {
+
+
+                        %>  
+
+
+
+
+
+
+
+
+                        <div class="col-md-3 resent-grid recommended-grid">
+                            <div class="random-class">
+                                <div class="resent-grid-img recommended-grid-img">
+                                    <a href="single.jsp?vcode=<%=rs5.getString("vcode")%>">
+                                        <!--                                    <video width="100%" controls>
+                                                                                <source src="uploadVideo/<%=rs5.getString("vcode")%>.mp4" type="video/mp4">
+                                                                                <source src="movie.ogg" type="video/ogg">
+                                                                                Your browser does not support the video tag.
+                                                                            </video>-->
+                                        <img class="image-class" src="thumbnail/<%=rs5.getString("vcode")%>.jpg" alt="" />
+                                    </a>
+                                    <div class="time small-time slider-time">
+                                        <p>7:34</p>
+                                    </div>
+                                    <div class="clck small-clck">
+                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                    <h5><a href="single.jsp?vcode=<%=rs5.getString("vcode")%>" class="title"><%=rs5.getString("title")%></a></h5>
+                                    <ul>
+                                        <li><p class="author author-info"><a href="#" class="author"><%=getChannel3.getString("name")%></a></p></li>
+                                        <li class="right-list"><p class="views views-info"><%=rs5.getInt("views")%> views</p></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <%
+
+                                }
+                            }
+
+                        %>
+
+                        <div class="clearfix"> </div>
+                    </div>
+
+                </div>
+                
+                
+                <%                            } catch (Exception er) {
+                        out.println(er.getMessage());
+                    }
+
+                %>
+                
+                <!--                        <div class="col-md-3 resent-grid recommended-grid">
+                                            <div class="resent-grid-img recommended-grid-img">
+                                                <a href="single.html"><img src="images/g1.jpg" alt="" /></a>
+                                                <div class="time small-time">
+                                                    <p>9:34</p>
+                                                </div>
+                                                <div class="clck small-clck">
+                                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                                <h5><a href="single.html" class="title">Nullam interdum viverra nullam metus varius sit sed viverra</a></h5>
+                                                <ul>
+                                                    <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+                                                    <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>-->
+                <!--                        <div class="col-md-3 resent-grid recommended-grid">
+                                            <div class="resent-grid-img recommended-grid-img">
+                                                <a href="single.html"><img src="images/g2.jpg" alt="" /></a>
+                                                <div class="time small-time">
+                                                    <p>5:34</p>
+                                                </div>
+                                                <div class="clck small-clck">
+                                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                                <h5><a href="single.html" class="title">Varius sit sed viverra nullam viverra nullam interdum metus</a></h5>
+                                                <ul>
+                                                    <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+                                                    <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>-->
+                <!--                        <div class="col-md-3 resent-grid recommended-grid">
+                                            <div class="resent-grid-img recommended-grid-img">
+                                                <a href="single.html"><img src="images/g3.jpg" alt="" /></a>
+                                                <div class="time small-time">
+                                                    <p>6:55</p>
+                                                </div>
+                                                <div class="clck small-clck">
+                                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                                <h5><a href="single.html" class="title">Nullam interdum metus viverra nullam varius sit sed viverra</a></h5>
+                                                <ul>
+                                                    <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+                                                    <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>-->
+
+                <div class="recommended">
+                    <div class="recommended-grids">
+                        <div class="recommended-info">
+                            <h3>Educational Videos</h3>
+                        </div>
+
+
+                        <%                             ResultSet rs5 = st.executeQuery("select * from uploaded_videos where category='Education'");
+
+                            while (rs5.next()) {
+                                String newChcode = rs5.getString("chcode");
+
+                                ResultSet getChannel3 = st1.executeQuery("select name from channel where chcode='" + newChcode + "'");
+
+                                if (getChannel3.next()) {
+
+
+                        %>  
+
+
+
+
+
+                        <div class="col-md-3 resent-grid recommended-grid">
+                            <div class="random-class">
+                                <div class="resent-grid-img recommended-grid-img">
+                                    <a href="single.jsp?vcode=<%=rs5.getString("vcode")%>">
+                                        <!--                                    <video width="100%" controls>
+                                                                                <source src="uploadVideo/<%=rs5.getString("vcode")%>.mp4" type="video/mp4">
+                                                                                <source src="movie.ogg" type="video/ogg">
+                                                                                Your browser does not support the video tag.
+                                                                            </video>-->
+                                        <img class="image-class" src="thumbnail/<%=rs5.getString("vcode")%>.jpg" alt="" />
+                                    </a>
+                                    <div class="time small-time slider-time">
+                                        <p>7:34</p>
+                                    </div>
+                                    <div class="clck small-clck">
+                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                    <h5><a href="single.jsp?vcode=<%=rs5.getString("vcode")%>" class="title"><%=rs5.getString("title")%></a></h5>
+                                    <ul>
+                                        <li><p class="author author-info"><a href="#" class="author"><%=getChannel3.getString("name")%></a></p></li>
+                                        <li class="right-list"><p class="views views-info"><%=rs5.getInt("views")%> views</p></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <%
+
+                                }
+                            }
+
+                        %>
+
+                        <div class="clearfix"> </div>
+                    </div>
+
+                </div>
+                
+                                <!--                        <div class="col-md-3 resent-grid recommended-grid">
+                                            <div class="resent-grid-img recommended-grid-img">
+                                                <a href="single.html"><img src="images/g1.jpg" alt="" /></a>
+                                                <div class="time small-time">
+                                                    <p>9:34</p>
+                                                </div>
+                                                <div class="clck small-clck">
+                                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                                <h5><a href="single.html" class="title">Nullam interdum viverra nullam metus varius sit sed viverra</a></h5>
+                                                <ul>
+                                                    <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+                                                    <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>-->
+                                
+                                <!--                        <div class="col-md-3 resent-grid recommended-grid">
+                                            <div class="resent-grid-img recommended-grid-img">
+                                                <a href="single.html"><img src="images/g2.jpg" alt="" /></a>
+                                                <div class="time small-time">
+                                                    <p>5:34</p>
+                                                </div>
+                                                <div class="clck small-clck">
+                                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                                <h5><a href="single.html" class="title">Varius sit sed viverra nullam viverra nullam interdum metus</a></h5>
+                                                <ul>
+                                                    <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+                                                    <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>-->
+                <!--                        <div class="col-md-3 resent-grid recommended-grid">
+                                            <div class="resent-grid-img recommended-grid-img">
+                                                <a href="single.html"><img src="images/g3.jpg" alt="" /></a>
+                                                <div class="time small-time">
+                                                    <p>6:55</p>
+                                                </div>
+                                                <div class="clck small-clck">
+                                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                                <h5><a href="single.html" class="title">Nullam interdum metus viverra nullam varius sit sed viverra</a></h5>
+                                                <ul>
+                                                    <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+                                                    <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>-->
+                
+                
+                
+                
+                <!--                        <div class="col-md-3 resent-grid recommended-grid">
+                                        <div class="resent-grid-img recommended-grid-img">
+                                            <a href="single.html"><img src="images/we2.jpg" alt=""></a>
+                                            <div class="time small-time">
+                                                <p>7:30</p>
+                                            </div>
+                                            <div class="clck small-clck">
+                                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                            <h5><a href="single.html" class="title">Varius sit sed viverra nullam viverra nullam interdum metus</a></h5>
+                                            <ul>
+                                                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+                                                <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>-->
+            <!--                        <div class="col-md-3 resent-grid recommended-grid">
+                                        <div class="resent-grid-img recommended-grid-img">
+                                            <a href="single.html"><img src="images/we1.jpg" alt=""></a>
+                                            <div class="time small-time">
+                                                <p>9:34</p>
+                                            </div>
+                                            <div class="clck small-clck">
+                                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                            <h5><a href="single.html" class="title">Nullam interdum viverra nullam metus varius sit sed viverra</a></h5>
+                                            <ul>
+                                                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+                                                <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>-->
+            <!--                        <div class="col-md-3 resent-grid recommended-grid">
+                                        <div class="resent-grid-img recommended-grid-img">
+                                            <a href="single.html"><img src="images/we4.jpg" alt=""></a>
+                                            <div class="time small-time">
+                                                <p>5:34</p>
+                                            </div>
+                                            <div class="clck small-clck">
+                                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                            <h5><a href="single.html" class="title">Varius sit sed viverra nullam viverra nullam interdum metus</a></h5>
+                                            <ul>
+                                                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+                                                <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>-->
+            <!--                        <div class="col-md-3 resent-grid recommended-grid">
+                                        <div class="resent-grid-img recommended-grid-img">
+                                            <a href="single.html"><img src="images/we3.jpg" alt=""></a>
+                                            <div class="time small-time">
+                                                <p>6:55</p>
+                                            </div>
+                                            <div class="clck small-clck">
+                                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                            <h5><a href="single.html" class="title">Nullam interdum metus viverra nullam varius sit sed viverra</a></h5>
+                                            <ul>
+                                                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+                                                <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>-->
+            
+            <div class="col-md-3 resent-grid recommended-grid">
+                            <div class="random-class">
+                                <div class="resent-grid-img recommended-grid-img">
+                                    <a href="single.jsp?vcode=<%=rs4.getString("vcode")%>">
+                                        <!--                                    <video width="100%" controls>
+                                                                                <source src="uploadVideo/<%=rs4.getString("vcode")%>.mp4" type="video/mp4">
+                                                                                <source src="movie.ogg" type="video/ogg">
+                                                                                Your browser does not support the video tag.
+                                                                            </video>-->
+                                        <img class="image-class" src="thumbnail/<%=rs4.getString("vcode")%>.jpg" alt="" />
+                                    </a>
+                                    <div class="time small-time slider-time">
+                                        <p>7:34</p>
+                                    </div>
+                                    <div class="clck small-clck">
+                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="resent-grid-info recommended-grid-info video-info-grid">
+                                    <h5><a href="single.jsp?vcode=<%=rs4.getString("vcode")%>" class="title"><%=rs4.getString("title")%></a></h5>
+                                    <ul>
+                                        <li><p class="author author-info"><a href="#" class="author"><%=getChannel2.getString("name")%></a></p></li>
+                                        <li class="right-list"><p class="views views-info"><%=rs4.getInt("views")%> views</p></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+            <div class="recommended">
+                    
+
+                </div>
+            
+            <div class="recommended-grids">
+                        <div class="recommended-info">
+                            <h3>Sports</h3>
+                        </div>
+
+
+                        
+
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="clearfix"> </div>
+                    </div>
